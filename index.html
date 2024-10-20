@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tag para responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Biblioteca</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestão de Biblioteca</h1>
+            <nav>
+                <!-- Botões de navegação para alternar entre as seções -->
+                <button onclick="showSection('items')">Itens</button>
+                <button onclick="showSection('users')">Usuários</button>
+                <button onclick="showSection('loans')">Empréstimos</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Seção de gerenciamento de itens -->
+            <section id="items" class="active">
+                <h2>Gerenciamento de Itens</h2>
+                <form id="itemForm">
+                    <!-- Formulário para adicionar novos itens -->
+                    <input type="text" id="itemTitle" placeholder="Título do Item" required>
+                    <input type="text" id="itemAuthor" placeholder="Autor/Diretor" required>
+                    <input type="number" id="itemYear" placeholder="Ano de Publicação" required>
+                    <select id="itemType" required>
+                        <option value="" disabled selected>Tipo de Item</option>
+                        <option value="Livro">Livro</option>
+                        <option value="Revista">Revista</option>
+                        <option value="DVD">DVD</option>
+                    </select>
+                    <input type="number" id="itemQuantity" placeholder="Quantidade Disponível" required>
+                    <button type="submit">Adicionar Item</button>
+                </form>
+                <!-- Tabela para listar os itens da biblioteca -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Autor/Diretor</th>
+                            <th>Tipo</th>
+                            <th>Ano</th>
+                            <th>Quantidade</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemList"></tbody>
+                </table>
+            </section>
+
+            <!-- Seção de gerenciamento de usuários -->
+            <section id="users">
+                <h2>Gerenciamento de Usuários</h2>
+                <form id="userForm">
+                    <!-- Formulário para adicionar novos usuários -->
+                    <input type="text" id="userName" placeholder="Nome do Usuário" required>
+                    <select id="userType" required>
+                        <option value="" disabled selected>Tipo de Usuário</option>
+                        <option value="Aluno">Aluno</option>
+                        <option value="Professor">Professor</option>
+                        <option value="Visitante">Visitante</option>
+                    </select>
+                    <button type="submit">Adicionar Usuário</button>
+                </form>
+                <ul id="userList"></ul>
+            </section>
+
+            <!-- Seção de empréstimos e devoluções -->
+            <section id="loans">
+                <h2>Empréstimos e Devoluções</h2>
+                <form id="loanForm">
+                    <!-- Formulário para registrar empréstimos -->
+                    <select id="loanItem" required></select>
+                    <select id="loanUser" required></select>
+                    <button type="submit">Registrar Empréstimo</button>
+                </form>
+                <ul id="loanList"></ul>
+            </section>
+        </main>
+    </div>
+    <!-- Link para o arquivo JavaScript -->
+    <script src="./src/js/script.js"></script>
+</body>
+</html>
