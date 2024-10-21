@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (now > returnDate) {
             const diffTime = Math.abs(now - returnDate);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            fine = diffDays * 2; // Multa de 2 unidades por dia de atraso
+            fine = diffDays * 2;
         }
 
         alert(`Item devolvido. Multa por atraso: ${fine} unidades`);
